@@ -83,7 +83,7 @@
       if (window.confirm('确定要删除？')) {
         var id = $(this).data('id')
         $.ajax({
-          url: 'http://192.168.0.115/remove',
+          url: 'http://192.168.0.115:3000/remove',
           type: 'get',
           data: {
             id: 6
