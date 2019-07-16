@@ -10,9 +10,9 @@
 <body>
   <div class="container">
     <div class="page-header">
-      <h1><a href="/">我的音乐</a> <small>首页</small></h1>
+      <h1><a href="/">我的客户</a> <small>首页</small></h1>
     </div>
-    <a class="btn btn-success" href="/add">添加歌曲</a>
+    <a class="btn btn-success" href="/add">添加用户</a>
     <div class="pull-right">
       <audio id="audio" src="uploads/万晓利 - 女儿情.mp3" controls="true"></audio>
     </div>
@@ -20,10 +20,10 @@
       <thead>
         <tr>
           <th>编号</th>
-          <th>标题</th>
-          <th>歌手</th>
-          <th>海报</th>
-          <th>播放</th>
+          <th>姓名</th>
+          <th>等级</th>
+          <th>利润</th>
+          <th>统计</th>        
           <th>操作</th>
         </tr>
       </thead>
@@ -35,13 +35,10 @@
     {{ each list as value index }}
     <tr>
       <td>{{index+1}}</td>
+      <td>{{value.music}}</td>
+      <td>{{value.img}}</td>
       <td>{{value.title}}</td>
       <td>{{value.singer}}</td>
-      <td>
-        <img width="100" src="uploads/{{value.img}}" alt="">
-      </td>
-      <td>
-        <span data-music="{{value.music}}" class="glyphicon glyphicon-play"></span></td>
       <td>
         <a href="/edit?id={{value.id}}">修改</a>
         <a data-id="{{value.id}}" class="remove" href="#">删除</a>

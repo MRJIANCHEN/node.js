@@ -44,10 +44,10 @@ exports.doAdd = (req, res) => {
     // F:\05-work\02-codePackage\10BasicalNode\07-Node基础-第7天-2016年10月25日-{Mysql基本使用、sql语句、数据增删改、留言本、网页
     // 版音乐播放器}\musicMyAnalysis\uploads\upload_8aab3ac004b7290f6bccc04953283409.mp3
     // console.log(files.music.path)
-    const music = path.basename(files.music.path)
+    const music = fields.music
     // upload_8aab3ac004b7290f6bccc04953283409.mp3
     // console.log(music)
-    const img = path.basename(files.img.path)
+    const img = fields.img
     db.query('INSERT INTO music(title, singer, music, img) VALUES(?, ?, ?, ?)', [
       title,
       singer,
@@ -84,15 +84,9 @@ exports.showEdit = (req, res) => {
 }
 
 exports.doEdit = (req, res) => {
-  // { id: '5' }
-  // console.log(req.query)
-  // { title: 'dgf', singer: '电话' }
-  // console.log(req.body)
   const id = req.query.id
   const title = req.body.title
   const singer = req.body.singer
-  // 数据存入数据库之前，一定要做数据安全校验
-  // 更新数据库中id为id那一行的数据
   db.query('UPDATE music SET title=?, singer=? WHERE id=?', [
     title, singer, id
   ], (err, rows) => {

@@ -21,16 +21,6 @@
         <label for="artist">歌手</label>
         <input type="text" class="form-control" id="singer" name="singer" placeholder="请输入歌手名称" value="<%= music.singer %>">
       </div>
-      <!-- <div class="form-group">
-        <label for="music_file">音乐</label>
-        <input type="file" id="music_file">
-        <p class="help-block">请选择要上传的音乐文件.</p>
-      </div>
-      <div class="form-group">
-        <label for="image_file">海报</label>
-        <input type="file" id="image_file">
-        <p class="help-block">请选择要上传的音乐海报.</p>
-      </div> -->
       <button type="submit" class="btn btn-success">确定修改</button>
     </form>
   </div>
@@ -42,7 +32,7 @@
       var url = $(this).attr('action')
       var type = $(this).attr('method')
       // 3
-      // console.log($(this).serialize())
+      console.log($(this).serialize())
       $.ajax({
         url: url,
         type: type,
