@@ -5,9 +5,9 @@ const mysql = require('mysql')
 const pool = mysql.createPool({
   // 这里可以配置连接池中的连接对象数量
   connectionLimit: 500,
-  host: '127.0.0.1',
+  host: 'localhost',
   user: 'root',
-  password: '2017521',
+  password: '123456',
   database: 'codepackage'
 })
 
